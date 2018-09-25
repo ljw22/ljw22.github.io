@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				setInterval("location.reload(true)", 50000);
+			  	$.get( "https://app-invisible-payment.westeurope.cloudapp.azure.com//api/v1/journeys", function( data ) {
+					$.each(data, function(key, value){
+	    				$( ".result" ).html('<label>'+value+'</label>');
+					});
+				});
+			});
+		</script>
+		<h1 class="result">
+		</h1>
+	</body>
+</html>
